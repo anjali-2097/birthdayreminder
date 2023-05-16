@@ -31,7 +31,7 @@ function Home() {
   
       let filter = person.filter(data => {
         
-        let day = new Date(data.date_of_birth).getDate()+1;
+          let day = new Date(data.date_of_birth).getDate()+1;
           let month = new Date(data.date_of_birth).getMonth()+1;
           
           return currentDay === day && currentMonth === month;
@@ -103,7 +103,7 @@ function Home() {
       </TabPanel>
   
       <TabPanel key="Upcoming" value="Upcoming" className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-3">
-        {Upcoming(Info,2).map(person => {
+        {Upcoming(Info,2).length===0 ? 'No upcoming birthdays in next 2 months' : Upcoming(Info,2).map(person => {
           
           return (
             <>
